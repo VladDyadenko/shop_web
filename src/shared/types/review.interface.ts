@@ -1,6 +1,6 @@
 import { IUser } from "./user.interface"
 
-export interface iReview{
+export interface IReview{
     id: string
     createdAt: string
     text: string
@@ -8,4 +8,4 @@ export interface iReview{
     user:IUser
 }
 
-export interface IReviewInput extends Pick<iReview, 'text' | 'rating'> { }
+export interface IReviewInput extends Pick<IReview, 'text' | 'rating'> { }
