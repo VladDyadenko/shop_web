@@ -1,9 +1,11 @@
 import { Metadata } from 'next'
 
+import { Home } from './Home'
+
 export const metadata: Metadata = {
-	title: 'Підприємство по виробництву щастя!'
+	title: 'Shop'
 }
 
 export default function HomePage() {
-	return <div>HomePage</div>
+	return <Home />
 }
