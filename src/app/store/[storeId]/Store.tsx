@@ -1,3 +1,3 @@
 export function Store() {
-    return <div>Store</div>
+	return <div>Store</div>
 }
