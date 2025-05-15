@@ -10,7 +10,7 @@ import {
 	FormMessage
 } from '@/components/ui/form-elements/Form'
 
-import { useCreateStore } from '@/hooks/queries/useCreateStore'
+import { useCreateStore } from '@/hooks/queries/stores/useCreateStore'
 
 import { IStoreCreate } from '@/shared/types/store.interface'
 

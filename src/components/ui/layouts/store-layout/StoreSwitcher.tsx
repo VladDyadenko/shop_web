@@ -2,7 +2,7 @@
 
 import { clsx } from 'clsx'
 import { ChevronsUpDown, Plus, StoreIcon } from 'lucide-react'
-import { useRouter } from 'next/navigation'
+import { useParams, useRouter } from 'next/navigation'
 import { useState } from 'react'
 
 import {
@@ -29,6 +29,12 @@ interface StoreSwitcherProps {
 
 export function StoreSwitcher({ items }: StoreSwitcherProps) {
 	const router = useRouter()
+	const param = useParams()
+
+	const isActiveStore =
+		items?.length !== 0 && param?.storeId
+			? items?.map(item => (item?.id === param?.storeId ? item?.title : ''))
+			: ''
 
 	const [isOpen, setIsOpen] = useState(false)
 
@@ -49,6 +55,7 @@ export function StoreSwitcher({ items }: StoreSwitcherProps) {
 					className='w-52'
 				>
 					<StoreIcon className='mr-2 size-4' />
+					{items?.length !== 0 && <p>{isActiveStore}</p>}
 					<ChevronsUpDown className='ml-auto size-4 shrink-0 opacity-50' />
 				</Button>
 			</PopoverTrigger>

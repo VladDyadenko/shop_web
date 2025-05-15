@@ -1,5 +1,5 @@
 export interface IMainStatistics{
-    id: string
+    id: number
     name: string
     value: number
 }
