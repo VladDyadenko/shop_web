@@ -5,6 +5,7 @@ import { useParams } from 'next/navigation'
 
 import { STORE_URL } from '@/config/url.config'
 
+import { MenuItem } from './MenuItem'
 import { IMenuItem } from './navigation/menu.interface'
 
 export function Navigation() {
@@ -43,5 +44,13 @@ export function Navigation() {
 		}
 	]
 
-	return <div>Navigation</div>
+	return (
+		<div className='flex flex-col w-full flex-1 mt-6'>
+			<div className='flex flex-col w-full space-y-3'>
+				{routes.map(route => (
+					<MenuItem key={route.value} route={route} />
+				))}
+			</div>
+		</div>
+	)
 }
