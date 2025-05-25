@@ -6,8 +6,8 @@ import { IColor, IColorInput } from "@/shared/types/color.interface";
 class ColorService{
   
     async getByStoryId(id:string) {
-        const { data } = await axiosWithAuth<IColor> ({
-            url: API_URL.colors(`by-storeId/${id}`),
+        const { data } = await axiosWithAuth<IColor[]> ({
+            url: API_URL.colors(`/by-storeId/${id}`),
             method:'GET'
         })
         
@@ -16,7 +16,7 @@ class ColorService{
     
     async getById(id:string) {
         const { data } = await axiosWithAuth <IColor> ({
-            url: API_URL.colors(`by-id/${id}`),
+            url: API_URL.colors(`/by-id/${id}`),
             method:'GET'
         })
         
@@ -46,7 +46,7 @@ class ColorService{
 
     async delete(id: string){
         const { data: deleteColor } = await axiosWithAuth<IColor>({
-            url: API_URL.colors(`${id}`),
+            url: API_URL.colors(`/${id}`),
             method:'DELETE'
         })
         

@@ -22,7 +22,7 @@ export function LastUsers({ data }: OveriewProps) {
 			<CardContent>
 				{data?.length ? (
 					data.map(user => (
-						<div className='flex items-center mt-5'>
+						<div className='flex items-center mt-5' key={user.id}>
 							{/* Коли буде підгружатися реальне фото, прибрати пусту строку */}
 							{user.picture === '' ? (
 								<Image

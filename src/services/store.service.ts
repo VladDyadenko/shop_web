@@ -36,9 +36,10 @@ class StoreService{
     
         async delete(id: string){
             const { data: deleteStore } = await axiosWithAuth<IStore>({
-                url: API_URL.stores(`${id}`),
+                url: API_URL.stores(`/${id}`),
                 method:'DELETE'
             })
+            console.log("🚀 ~ StoreService ~ delete ~ data:", deleteStore)
             
             return deleteStore
         }

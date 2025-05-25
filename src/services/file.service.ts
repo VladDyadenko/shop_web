@@ -5,7 +5,7 @@ import { IFile } from "@/shared/types/file.interface"
 class FileService{
 
     async upload(file: FormData, folder?: string) {
-        const { data } = await axiosWithAuth<IFile>({
+        const { data } = await axiosWithAuth<IFile[]>({
             url: API_URL.files(''),
             method: 'POST',
             data: file,

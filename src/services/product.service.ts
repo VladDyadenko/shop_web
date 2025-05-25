@@ -15,7 +15,7 @@ class ProductService{
     }
 
         async getByStoryId(id:string) {
-            const { data } = await axiosWithAuth<IProduct> ({
+            const { data } = await axiosWithAuth<IProduct[]> ({
                 url: API_URL.products(`/by-storeId/${id}`),
                 method:'GET'
             })
@@ -58,14 +58,14 @@ class ProductService{
             return data
     }
 
-    async create(data: IProductInput, storeId: string) {
-        const { data: createdProduct } = await axiosWithAuth<IProduct[]>({
+    async create(storeId: string, data: IProductInput) {
+        const { data: createProduct } = await axiosWithAuth<IProduct>({
             url: API_URL.products(`/${storeId}`),
             method: 'POST',
             data
 
         })
-        return createdProduct
+        return createProduct
     }
 
 
@@ -81,7 +81,7 @@ class ProductService{
 
     async delete(id: string){
         const { data: deleteProduct } = await axiosWithAuth<IProduct>({
-            url: API_URL.products(`${id}`),
+            url: API_URL.products(`/${id}`),
             method:'DELETE'
         })
             

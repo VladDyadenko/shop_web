@@ -45,4 +45,4 @@ axiosWithAuth.interceptors.response.use(
 
     }) 
 
-    export {axiosClassic, axiosWithAuth}
+export {axiosClassic, axiosWithAuth}
