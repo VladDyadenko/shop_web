@@ -2,13 +2,13 @@ import { Metadata } from 'next'
 
 import { NO_INDEX_PAGE } from '@/constants/seo.constants'
 
-import { ColorEdit } from './ColorEdit'
+import { Categories } from './Categories'
 
 export const metadata: Metadata = {
-	title: 'Настройка кольорів',
+	title: 'Категорії',
 	...NO_INDEX_PAGE
 }
 
-export default function colorEditPage() {
-	return <ColorEdit />
+export default function ProductsPage() {
+	return <Categories />
 }

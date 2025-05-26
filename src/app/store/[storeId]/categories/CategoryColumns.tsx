@@ -13,11 +13,11 @@ import {
 
 import { PUBLIC_URL, STORE_URL } from '@/config/url.config'
 
-import { IColor } from '@/shared/types/color.interface'
+import { ICategory } from '@/shared/types/category.interface'
 
-export const colorColumns: ColumnDef<IColor>[] = [
+export const categoryColumns: ColumnDef<ICategory>[] = [
 	{
-		accessorKey: 'name',
+		accessorKey: 'title',
 		header: ({ column }) => {
 			return (
 				<Button
@@ -29,29 +29,6 @@ export const colorColumns: ColumnDef<IColor>[] = [
 				</Button>
 			)
 		}
-	},
-	{
-		accessorKey: 'value',
-		header: ({ column }) => {
-			return (
-				<Button
-					variant='ghost'
-					onClick={() => column.toggleSorting(column.getIsSorted() === 'asc')}
-				>
-					Значення
-					<ArrowUpDown className='ml-2 size-4' />
-				</Button>
-			)
-		},
-		cell: ({ row }) => (
-			<div className='flex items-center gap-x-3'>
-				{row.original.value}
-				<div
-					className='size-4 rounded-full border'
-					style={{ backgroundColor: row.original.value }}
-				></div>
-			</div>
-		)
 	},
 	{
 		accessorKey: 'createdAt',
@@ -80,7 +57,7 @@ export const colorColumns: ColumnDef<IColor>[] = [
 				<DropdownMenuContent align='end'>
 					<DropdownMenuLabel>Дії</DropdownMenuLabel>
 					<Link
-						href={STORE_URL.colorEdit(row.original.storeId, row.original.id)}
+						href={STORE_URL.categoryEdit(row.original.storeId, row.original.id)}
 						target='_blank'
 					>
 						<DropdownMenuItem>

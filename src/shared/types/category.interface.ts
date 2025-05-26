@@ -3,7 +3,7 @@ export interface ICategory{
     createdAt: string
     title: string
     description: string
-    storedId: string
+    storeId: string
 }
 
 export interface ICategoryInput extends Pick<ICategory, 'title' | 'description'> { }

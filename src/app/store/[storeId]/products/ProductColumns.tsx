@@ -112,7 +112,7 @@ export const productColumns: ColumnDef<IProductColumn>[] = [
 					>
 						<DropdownMenuItem>
 							<Pencil className='size-4 mr-2' />
-							Змінити
+							Редагувати
 						</DropdownMenuItem>
 					</Link>
 				</DropdownMenuContent>
