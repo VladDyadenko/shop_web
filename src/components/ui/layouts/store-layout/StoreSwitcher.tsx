@@ -28,6 +28,8 @@ interface StoreSwitcherProps {
 }
 
 export function StoreSwitcher({ items }: StoreSwitcherProps) {
+	const [isOpen, setIsOpen] = useState(false)
+
 	const router = useRouter()
 	const param = useParams()
 
@@ -35,8 +37,6 @@ export function StoreSwitcher({ items }: StoreSwitcherProps) {
 		items?.length !== 0 && param?.storeId
 			? items?.map(item => (item?.id === param?.storeId ? item?.title : ''))
 			: ''
-
-	const [isOpen, setIsOpen] = useState(false)
 
 	const onStoreSelect = (storeId: string) => {
 		setIsOpen(false)

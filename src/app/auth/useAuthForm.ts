@@ -1,4 +1,4 @@
-import { DASHBOARD_URL, PUBLIC_URL } from "@/config/url.config";
+import { DASHBOARD_URL } from "@/config/url.config";
 import { authService } from "@/services/auth/auth.service";
 import { IAuthForm } from "@/shared/types/auth.interface";
 import { useMutation } from "@tanstack/react-query";

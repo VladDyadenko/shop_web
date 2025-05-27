@@ -42,7 +42,7 @@ class ProductService{
     }
     
     async getMostPopular() {
-            const { data } = await axiosClassic <IProduct> ({
+            const { data } = await axiosClassic <IProduct[]> ({
                 url: API_URL.products(`/most-popular/`),
                 method:'GET'
             })

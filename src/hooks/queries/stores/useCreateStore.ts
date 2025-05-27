@@ -1,3 +1,4 @@
+'use client'
 import { STORE_URL } from "@/config/url.config";
 import { storeService } from "@/services/store.service";
 import { IStoreCreate } from "@/shared/types/store.interface";
