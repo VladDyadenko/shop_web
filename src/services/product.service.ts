@@ -33,8 +33,8 @@ class ProductService{
     }
     
         async getByCategory(categoryId:string) {
-            const { data } = await axiosClassic <IProduct> ({
-                url: API_URL.products(`/by-id/${categoryId}`),
+            const { data } = await axiosClassic <IProduct[]> ({
+                url: API_URL.products(`/by-category/${categoryId}`),
                 method:'GET'
             })
             
@@ -50,7 +50,7 @@ class ProductService{
             return data
     }
     async getSimilar(id:string) {
-            const { data } = await axiosClassic <IProduct> ({
+            const { data } = await axiosClassic <IProduct[]> ({
                 url: API_URL.products(`/similar/${id}`),
                 method:'GET'
             })

@@ -14,7 +14,7 @@ class UserService{
 
     async toggleFavorite(productId:string) {
        return await axiosWithAuth<IUser>({
-            url: API_URL.users(`/profile/favorite/${productId}`),
+            url: API_URL.users(`/profile/favorites/${productId}`),
             method:'PATCH'
         })
        

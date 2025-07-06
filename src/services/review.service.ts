@@ -25,7 +25,7 @@ class ReviewService{
 
     async delete(id: string){
         const { data: deleteReview } = await axiosWithAuth<IReview>({
-            url: API_URL.reviews(`${id}`),
+            url: API_URL.reviews(`/${id}`),
             method:'DELETE'
         })
                 

@@ -1,6 +1,6 @@
 'use client'
 
-import { LogOut } from 'lucide-react'
+import { LogOut, User } from 'lucide-react'
 import Image from 'next/image'
 import Link from 'next/link'
 
@@ -36,17 +36,32 @@ export function HeaderMenu() {
 						</Link>
 					) : (
 						<CreateStoreModal>
-							<Button variant='ghost'> Створити магазин</Button>
+							<span> Створити магазин</span>
 						</CreateStoreModal>
 					)}
-					<Link href={DASHBOARD_URL.home()}>
-						<Image
-							src={user.picture}
-							alt={user.name}
-							width={42}
-							height={42}
-							className='rounded-full'
-						/>
+					<Link href={DASHBOARD_URL.home()} className='flex items-center gap-2'>
+						{user.picture && user.picture !== '/uploads/no-user-image.png' ? (
+							<Image
+								src={user.picture}
+								alt={user.name}
+								width={42}
+								height={42}
+								className='rounded-full'
+								onError={e => {
+									e.currentTarget.style.display = 'none'
+									if (e.currentTarget.nextSibling) {
+										;(
+											e.currentTarget.nextSibling as HTMLElement
+										).style.display = 'flex'
+									}
+								}}
+							/>
+						) : (
+							<div className='w-10 h-10 bg-gray-200 rounded-full flex items-center justify-center ml-2'>
+								<User className='w-5 h-5 text-gray-500' />
+							</div>
+						)}
+						{user.name}
 					</Link>
 				</>
 			) : (

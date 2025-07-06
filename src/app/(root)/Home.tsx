@@ -1,3 +1,7 @@
+import { Catalog } from '@/components/ui/catalog/Catalog'
+
+import { PUBLIC_URL } from '@/config/url.config'
+
 import { IProduct } from '@/shared/types/product.interface'
 
 import { Hero } from './hero/Hero'
@@ -9,6 +13,13 @@ export function Home({ products }: HomeProps) {
 	return (
 		<>
 			<Hero />
+			<Catalog
+				title='Хіти продажу'
+				description='Найпопулярніши товари нашого магазину'
+				linkTitle='Дізнатися більше'
+				link={PUBLIC_URL.explorer()}
+				products={products}
+			/>
 		</>
 	)
 }
