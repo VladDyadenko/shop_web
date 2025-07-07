@@ -19,9 +19,6 @@ export function ProductEdit() {
 	})
 
 	const { categories } = useGetCategories()
-	console.log('🚀 ~ ProductEdit ~ categories:', categories)
 	const { colors } = useGetColors()
-	console.log('🚀 ~ ProductEdit ~ colors:', colors)
-
 	return <ProductForm categories={categories || []} colors={colors || []} product={data} />
 }

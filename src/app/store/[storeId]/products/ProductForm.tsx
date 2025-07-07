@@ -39,8 +39,6 @@ interface ProductFormProps {
 }
 
 export function ProductForm({ product, categories, colors }: ProductFormProps) {
-	console.log('🚀 ~ ProductForm ~ colors:', colors)
-	console.log('🚀 ~ ProductForm ~ categories:', categories)
 	const { createProduct, isLoadingCreate } = useCreateProduct()
 	const { updateProduct, isLoadingUpdate } = useUpdateProduct()
 	const { deleteProduct, isLoadingDelete } = useDeleteProduct()

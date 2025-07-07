@@ -10,7 +10,6 @@ interface ProductGaleryProps {
 }
 
 export function ProductGalery({ product }: ProductGaleryProps) {
-	console.log('🚀 ~ ProductGalery ~ product:', product.images[0])
 	const [currentIndex, setCurrentIndex] = useState(0)
 
 	return (

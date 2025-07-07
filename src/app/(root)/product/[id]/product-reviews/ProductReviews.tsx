@@ -15,7 +15,6 @@ interface ProductReviewsProps {
 }
 
 export function ProductReviews({ product }: ProductReviewsProps) {
-	console.log('🚀 ~ ProductReviews ~ product:', product)
 	const { user } = useProfile()
 
 	const { deleteReview } = useDeleteReview()

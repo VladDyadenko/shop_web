@@ -15,8 +15,6 @@ interface FavoriteButtonProps {
 
 export function FavoriteButton({ product }: FavoriteButtonProps) {
 	const { user } = useProfile()
-	console.log('🚀 ~ FavoriteButton ~ user:', user)
-
 	const queryClient = useQueryClient()
 
 	const { mutate, isPending } = useMutation({

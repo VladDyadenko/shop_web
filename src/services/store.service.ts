@@ -39,7 +39,6 @@ class StoreService{
                 url: API_URL.stores(`/${id}`),
                 method:'DELETE'
             })
-            console.log("🚀 ~ StoreService ~ delete ~ data:", deleteStore)
             
             return deleteStore
         }
