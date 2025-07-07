@@ -29,14 +29,14 @@ export function HeaderCart() {
 	return (
 		<Sheet>
 			<SheetTrigger asChild>
-				<Button variant='ghost' className='relative'>
-					<ShoppingCart className='h-5 w-5' />
+				<Button variant='ghost' className='relative justify-baseline lg:justify-center'>
+					<span className='m-0 lg:ml-2 hidden sm:inline'>Корзина</span>
+					<ShoppingCart className='lg:hidden size-4' />
 					{items.length > 0 && (
-						<div className='absolute -top-2 -right-2 bg-green-500 text-white text-xs rounded-full h-5 w-5 flex items-center justify-center font-medium'>
+						<div className='lg:absolute lg:-top-2 lg:-right-2 bg-green-500 text-white text-xs rounded-full h-5 w-5 flex items-center justify-center font-medium'>
 							{items.length}
 						</div>
 					)}
-					<span className='ml-2 hidden sm:inline'>Корзина</span>
 				</Button>
 			</SheetTrigger>
 			<SheetContent className='h-full flex flex-col p-5'>

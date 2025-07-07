@@ -12,7 +12,7 @@ export function Logo() {
 			className='flex items-center gap-x-3 hover:opacity-75 transition-opacity'
 		>
 			<Image src='/images/logo.svg' alt={SITE_NAME} width={35} height={35} />
-			<div className='text-2xl font-bold text-blue-600'>{SITE_NAME}</div>
+			<div className='hidden xl:block text-2xl font-bold text-blue-600'>{SITE_NAME}</div>
 		</Link>
 	)
 }
