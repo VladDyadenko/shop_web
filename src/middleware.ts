@@ -4,6 +4,7 @@ import { PUBLIC_URL } from "./config/url.config"
 
 export async function middleware(request: NextRequest){
     const refreshToken = request.cookies.get(EnumTokens.REFRESH_TOKEN)?.value
+    console.log("🚀 ~ middleware ~ refreshToken:", refreshToken)
 
     const isAuthPage = request.url.includes(PUBLIC_URL.auth())
     

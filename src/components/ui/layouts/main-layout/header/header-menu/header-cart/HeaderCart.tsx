@@ -33,7 +33,7 @@ export function HeaderCart() {
 					<span className='m-0 lg:ml-2 hidden sm:inline'>Корзина</span>
 					<ShoppingCart className='lg:hidden size-4' />
 					{items.length > 0 && (
-						<div className='lg:absolute lg:-top-2 lg:-right-2 bg-green-500 text-white text-xs rounded-full h-5 w-5 flex items-center justify-center font-medium'>
+						<div className='lg:absolute lg:top-0 lg:-right-2 bg-green-500 text-white text-xs rounded-full h-5 w-5 flex items-center justify-center font-medium'>
 							{items.length}
 						</div>
 					)}
