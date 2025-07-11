@@ -13,6 +13,8 @@ class AuthService{
 
         if (response.data.accessToken) saveTokenStorage(response.data.accessToken)
         
+            await new Promise(resolve => setTimeout(resolve, 200));
+        
         return response
     }
 
