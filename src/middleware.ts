@@ -9,8 +9,8 @@ import { PUBLIC_URL } from "./config/url.config"
 //     const allCookies = request.cookies.getAll();
 //     console.log("🚀 ~ All cookies:", allCookies);
 //      // Шукайте refreshToken серед всіх cookies
-//      const refreshTokenCookie = allCookies.find(cookie => 
-//         cookie.name.includes('refresh') || 
+//      const refreshTokenCookie = allCookies.find(cookie =>
+//         cookie.name.includes('refresh') ||
 //         cookie.name.includes('Refresh')
 //     );
     
@@ -37,10 +37,37 @@ import { PUBLIC_URL } from "./config/url.config"
 // }
 
 // Тимчасово спростіть middleware
+
+// Варіант 2
+
+// export async function middleware(request: NextRequest) {
+//     const { pathname } = request.nextUrl;
+    
+//     // Тільки для auth сторінки
+//     if (pathname === '/auth') {
+//         const refreshToken = request.cookies.get(EnumTokens.REFRESH_TOKEN)?.value;
+//         const accessToken = request.cookies.get(EnumTokens.ACCESS_TOKEN)?.value;
+        
+//         if (refreshToken || accessToken) {
+//             return NextResponse.redirect(new URL('/dashboard', request.url));
+//         }
+//     }
+    
+//     // Для всього іншого - дозволити
+//     return NextResponse.next();
+// }
+
+// export const config = {
+//     matcher: ['/auth'] // ← Тільки для auth сторінки
+// }
+
+// Варіант 3
+
+// Middleware тільки для auth сторінки
 export async function middleware(request: NextRequest) {
     const { pathname } = request.nextUrl;
     
-    // Тільки для auth сторінки
+    // Тільки перевіряйте auth сторінку
     if (pathname === '/auth') {
         const refreshToken = request.cookies.get(EnumTokens.REFRESH_TOKEN)?.value;
         const accessToken = request.cookies.get(EnumTokens.ACCESS_TOKEN)?.value;
@@ -50,10 +77,9 @@ export async function middleware(request: NextRequest) {
         }
     }
     
-    // Для всього іншого - дозволити
     return NextResponse.next();
 }
 
 export const config = {
-    matcher: ['/auth'] // ← Тільки для auth сторінки
+    matcher: ['/auth'] // Тільки для auth
 }
